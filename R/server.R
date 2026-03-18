@@ -243,7 +243,13 @@ server <- function(input, output, session) {
     
     df <- ensure_cols(df, c("uppgift_name"), default = NA_character_)
     if ("uppgift_id" %in% names(df) && "uppgift_name" %in% names(df)) df <- df |> relocate(uppgift_name, .after = uppgift_id)
-    
+
+    df <- df[order(
+      is.na(df$created_at),
+      desc(df$created_at),
+      desc(df$uppgift_id)
+    ), ]
+
     for (col in c("consultant_id","uppdrag_id","customer_id")) if (col %in% names(df)) df[[col]] <- NULL
     
     h <- hot_with_date_cols(df, c("startdatum","slutdatum","created_at"))
