@@ -2368,10 +2368,10 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "663cc66f718c28befd97184ffb7083ed"
+      "checksum": "3e8a13acd323926d80bb84ba4e0cfdba"
     },
     "app.r": {
-      "checksum": "db58805345c8c7decb8fc1d41cc1bd0d"
+      "checksum": "38971812ce4270b4eb2c368ee26732ee"
     },
     "data/Base_data.xlsx": {
       "checksum": "45a25d41a3b29a4e2de44b95277d4368"
@@ -2401,7 +2401,7 @@
       "checksum": "d77f71ac34e52efb2cfd99b00bcbd28c"
     },
     "R/helpers_hot.R": {
-      "checksum": "245615d23758744552d4d69951a6209a"
+      "checksum": "521d649658906dac3703c91f99acf09a"
     },
     "R/helpers_ids_labels.R": {
       "checksum": "ade2f7c0155261a2a41211bd3a8d3c2d"
@@ -2413,7 +2413,7 @@
       "checksum": "6cd66941b0ef9c0a724fedd5c4af79aa"
     },
     "R/server.R": {
-      "checksum": "bab7641d26ca3d7a42e14f1dc0cddb1c"
+      "checksum": "d870e4c0f37532bc28fa0802d72b1314"
     },
     "R/server_add_handlers.R": {
       "checksum": "9dd915395e6d826c2725daa8d1a854d9"
@@ -2422,7 +2422,7 @@
       "checksum": "a0d7a606e41e47492ffb8fe5b87f29a6"
     },
     "R/ui.R": {
-      "checksum": "4a4b7b55959051a3817fa76ffb53b3a4"
+      "checksum": "3217aed1a6ed6d44d88ab0dee48d9dad"
     },
     "README.md": {
       "checksum": "37db55aa3351ab36c801d6c4119d8e0f"

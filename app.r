@@ -18,6 +18,12 @@ rm(list = ls())
 graphics.off()
 cat("\014")
 
+# Load rhandsontable explicitly outside suppressPackageStartupMessages so any
+# installation / path error surfaces immediately rather than being swallowed.
+# Namespace-qualified calls (rhandsontable::*) are used throughout the app as
+# a belt-and-suspenders guard against renv library-path issues on Connect Cloud.
+library(rhandsontable)
+
 suppressPackageStartupMessages({
   library(shiny)
   library(readxl)
@@ -26,7 +32,6 @@ suppressPackageStartupMessages({
   library(dplyr)
   library(lubridate)
   library(stringr)
-  library(rhandsontable)
 })
 
 # ===================== KONFIG =====================
