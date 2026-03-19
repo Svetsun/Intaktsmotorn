@@ -4,8 +4,21 @@
 # Source this file at the top of app.R.
 
 # Path to the Excel workbook used as the data store.
-# Relative to the app working directory (project root when launched via shiny::runApp).
-TARGET_XLSX <- file.path("data", "Base_data.xlsx")
+# On Posit Connect Cloud the data/ folder may not be present, so we fall back
+# to downloading the file from GitHub and caching it in a temp location.
+.local_xlsx  <- file.path("data", "Base_data.xlsx")
+.github_url  <- "https://raw.githubusercontent.com/Svetsun/Intaktsmotorn/main/data/Base_data.xlsx"
+
+if (file.exists(.local_xlsx)) {
+  TARGET_XLSX <- .local_xlsx
+} else {
+  .tmp <- tempfile(fileext = ".xlsx")
+  download.file(.github_url, destfile = .tmp, mode = "wb", quiet = TRUE)
+  TARGET_XLSX <- .tmp
+  rm(.tmp)
+}
+
+rm(.local_xlsx, .github_url)
 
 # Revenue threshold above which the bonus percentage applies (SEK / month).
 BONUS_THRESHOLD <- 100000
