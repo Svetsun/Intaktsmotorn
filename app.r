@@ -14,14 +14,20 @@
 #   -> skapar FM-rad automatiskt vid "Lägg till kund"
 ###############################################
 
-rm(list = ls())
-graphics.off()
-cat("\014")
+# ── renv ──────────────────────────────────────────────────────────────────────
+# .Rprofile is NOT deployed to Posit Connect Cloud (it is gitignored), so the
+# renv activation that normally lives there must be done here instead.
+# On Connect, CONNECT_SERVER is set by the platform — we skip renv because
+# packages are already installed from manifest.json into the server library.
+# Locally, we activate renv so the project-local library is used.
+if (nchar(Sys.getenv("CONNECT_SERVER")) == 0 && file.exists("renv/activate.R")) {
+  source("renv/activate.R")
+}
 
-# Load rhandsontable explicitly outside suppressPackageStartupMessages so any
-# installation / path error surfaces immediately rather than being swallowed.
-# Namespace-qualified calls (rhandsontable::*) are used throughout the app as
-# a belt-and-suspenders guard against renv library-path issues on Connect Cloud.
+# ── packages ──────────────────────────────────────────────────────────────────
+# rhandsontable loaded first and explicitly so that any installation/path error
+# surfaces immediately. Namespace-qualified calls (rhandsontable::*) are used
+# throughout the app as a belt-and-suspenders guard against library-path issues.
 library(rhandsontable)
 
 suppressPackageStartupMessages({

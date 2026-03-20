@@ -16,6 +16,7 @@ sandbox/
 staging/
 
 # R / VS Code
+.Rprofile
 .Rhistory
 .RData
 .Rproj.user/
