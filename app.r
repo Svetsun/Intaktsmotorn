@@ -29,6 +29,7 @@ if (nchar(Sys.getenv("CONNECT_SERVER")) == 0 && file.exists("renv/activate.R")) 
 # surfaces immediately. Namespace-qualified calls (rhandsontable::*) are used
 # throughout the app as a belt-and-suspenders guard against library-path issues.
 library(rhandsontable)
+library(lubridate)
 
 suppressPackageStartupMessages({
   library(shiny)
@@ -36,7 +37,6 @@ suppressPackageStartupMessages({
   library(writexl)
   library(janitor)
   library(dplyr)
-  library(lubridate)
   library(stringr)
 })
 
